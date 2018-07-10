@@ -5,7 +5,9 @@
 
 
 'use strict'
+
 const express = require('express')
+const mongoose = require('mongoose')
 const port = process.env.PORT || 3000;  // Set the port as enviroment var
 
 const app = express();
@@ -44,7 +46,14 @@ app.delete('/api/product/:id', (req, res)=>{
 
 })
 
+mongoose.connect('mongodb://localhost:27017/shop', (err, res)=>{
+    if (err) {
+        return console.log(`Error al conectar a la base de datos: ${err}`)
+    }
 
-app.listen(port, ()=>{
-    console.log(`API REST corriendo en http://localhost:${port}`)
+    console.log('Conexion a la base de datos establish')
+    
+    app.listen(port, ()=>{
+        console.log(`API REST corriendo en http://localhost:${port}`)
+    })
 })
