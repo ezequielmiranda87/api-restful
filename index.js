@@ -18,13 +18,11 @@ const app = express();
 app.use(express.urlencoded())
 app.use(express.json())
 
-
-app.get("/api/product", ProductCtrl.getProducts())
-app.get('/api/product/:id', ProductCtrl.getProduct())
-app.post('/api/product', ProductCtrl.saveProduct())
-app.put('/api/product/:id', ProductCtrl.updateProduct())
-app.delete('/api/product/:id', ProductCtrl.deleteProduct())
-
+app.get("/api/product", ProductCtrl.getProducts)
+app.get('/api/product/:id', ProductCtrl.getProduct)
+app.post('/api/product', ProductCtrl.saveProduct)
+app.put('/api/product/:id', ProductCtrl.updateProduct)
+app.delete('/api/product/:id', ProductCtrl.deleteProduct)
 
 
 mongoose.connect('mongodb://localhost:27017/shop', (err, res)=>{

@@ -1,5 +1,5 @@
 'use strict'
-const Product = require('./models/product')
+const Product = require('../models/product')
 
 function getProduct(req, res){
     const productId = req.params.id
