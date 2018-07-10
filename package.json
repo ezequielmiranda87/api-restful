@@ -4,11 +4,15 @@
   "description": "API RESTful con node.js, express y mongodb",
   "main": "index.js",
   "scripts": {
+    "start":"nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ezequiel Miranda (emiranda@genomastudio.com)",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
   }
 }
