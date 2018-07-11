@@ -8,4 +8,4 @@ api.post('/product', productCtrl.saveProduct)
 api.put('/product/:id', productCtrl.updateProduct)
 api.delete('/product/:id', productCtrl.deleteProduct)
 
-module.exports = api;
+module.exports = api
