@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint" : "standard --fix"
   },
   "author": "Ezequiel Miranda (emiranda@genomastudio.com)",
   "license": "MIT",
@@ -14,6 +15,7 @@
     "mongoose": "^5.2.2"
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "nodemon": "^1.17.5",
+    "standard": "^11.0.1"
   }
 }
