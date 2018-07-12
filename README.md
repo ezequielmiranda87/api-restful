@@ -9,7 +9,17 @@ Builindg API restful  with node.js 4.0
 * Start the server: ```npm start```
 
 
-# Application Structures
+#Code Overview
+
+## Dependencies - Production
+* expres.js
+* mongoose
+* crypto
+* jwt-simple
+* nodemon 
+
+
+## Application Structure
 ```
 root/
 ├── client/
