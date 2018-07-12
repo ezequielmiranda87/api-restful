@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="" method="post">
+    <label for="email">Email:</label>
+    <input id ="email" name ="email" type="text">
+
+    <label for="password">Password</label>
+    <input id="password" name ="password" type="text">
+
+    <input type="submit" value="Login">
+</form>   
+ 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+
+const axios = this.axios;
+
+function signIn(){
+    const email     = document.getElementById('email')
+    const password  = document.getElementById('password')
+
+    axios.get('localhost:3000/api/signin')
+    .then((response)=>{
+        // Redirect
+
+
+    })
+    .catch((err)=>{
+        // Show error message
+
+
+    })
+
+}
+
+function signUp(){
+    axios.post('localhost:3000/Api/signup')
+    .then((response)=>{
+
+    })
+    .catch((err)=>{
+
+    })
+}
+
+
+
+</script>
+</body>
+</html>
