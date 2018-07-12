@@ -1,4 +1,4 @@
-# api-restful
+# Api-restful
 Api restful with node.js  express  and mongodb
 
 
@@ -9,20 +9,19 @@ Api restful with node.js  express  and mongodb
 ```
 root/
 |-- client/
-    |-- src/
-    |-- index.html
+|   |-- src/
+|   |-- index.html
 |-- controllers/
-    |-- product.js
-    |-- user.js
+|   |-- product.js
+|   |-- user.js
 |-- middlewares/
-    |-- auth.js
+|   |-- auth.js
 |-- models/
-    |-- product.js
-    |-- user.js
+|   |-- product.js
+|   |-- user.js
 |-- node_modules/
 |-- routes
-    |-- index.js
+|   |-- index.js
 |-- services
-    |-- index.js
-
+|   |-- index.js
 ```
