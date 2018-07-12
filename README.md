@@ -1,8 +1,12 @@
 # api-restful
 Api restful with node.js  express  and mongodb
 
-# Structure proyect
 
+# Installation
+* clone the repo 
+
+# Structure proyect
+```
 root/
 |-- client/
     |-- src/
@@ -20,3 +24,5 @@ root/
     |-- index.js
 |-- services
     |-- index.js
+
+```
