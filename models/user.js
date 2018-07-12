@@ -10,13 +10,12 @@ const UserSchema = new Schema({
   displayName: String,
   avatar: String,
   password: {type: String},
-  /*password: {type: String, select: false},*/
+  /* password: {type: String, select: false}, */
   signupDate: {type: Date, default: Date.now()},
   lastLogin: Date
 })
 
-
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
   let user = this
   if (!user.isModified('password')) return next()
 
@@ -30,7 +29,6 @@ UserSchema.pre('save', function(next) {
     })
   })
 })
-
 
 /*
 UserSchema.methods.gravatar = function () {

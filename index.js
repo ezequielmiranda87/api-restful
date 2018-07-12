@@ -8,8 +8,6 @@ const app = require('./app')
 const config = require('./config')
 const mongoose = require('mongoose')
 
-console.log(config)
-
 mongoose.connect(config.db, (err, res) => {
   if (err) {
     return console.log(`Error al conectar a la base de datos: ${err}`)

@@ -7,18 +7,17 @@
 const express = require('express')
 const app = express()
 const api = require('./routes')
-const crypto = require('crypto')
-const cors = require("cors")
+const cors = require('cors')
 
-
-app.use(cors())
-
-// Adding body-parser Method as middleware of our app
+// Adding body-parser, cors Method as middleware of our app
 app.use(express.urlencoded())
 app.use(express.json())
-app.use('/api', api)
-app.get("/", (req, res)=>{
-    res.status(200).send({message:"Respuesta ok", status: true})
+app.use(cors())
+
+app.get('/', (req, res) => {
+  res.status(200).send({message: 'Respuesta ok', status: true})
 })
+
+app.use('/api', api)
 
 module.exports = app
