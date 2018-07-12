@@ -1,11 +1,15 @@
-# Api-restful
-Api restful with node.js  express  and mongodb
+# API - RESTful
+Builindg API restful  with node.js 4.0 
 
 
-# Installation
-* clone the repo 
+# Getting started
+* Clone thus repo ```https://github.com/ezequielmiranda87/api-restful```
+* Install dependencies ```npm install```
+* Install MongoDb Community Edition  and run it by executing ```mongod```
+* Start the server: ```npm start```
 
-# Structure proyect
+
+# Application Structures
 ```
 root/
 ├── client/
@@ -25,3 +29,6 @@ root/
 ├── services
 │   ├── index.js
 ```
+
+# Testing API
+Test your API using 
