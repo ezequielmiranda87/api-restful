@@ -23,34 +23,70 @@
 <script>
 
 const axios = this.axios;
+//axios.defaults.headers.common['Authorization'] = 'Bearer ' + getToken()
 
+signUp()
 function signIn(){
-    const email     = document.getElementById('email')
-    const password  = document.getElementById('password')
+    //const email     = document.getElementById('email')
+    //const password  = document.getElementById('password')
 
-    axios.get('localhost:3000/api/signin')
+    axios({
+        method:'post',
+        url: 'http://localhost:3000/api/signin',
+        data:{
+            email:"email",
+            password:"password"
+        }
+    })
     .then((response)=>{
-        // Redirect
-
-
+        console.log(response)
     })
     .catch((err)=>{
-        // Show error message
-
-
+        console.log(err)
     })
-
 }
+
 
 function signUp(){
-    axios.post('localhost:3000/Api/signup')
+    axios({
+        method:'post',
+        url: 'http://localhost:3000/api/signup',
+        data:{
+            email:"Aemail",
+            displayName: "AdisplayName",
+            password:"Apassword"
+        }
+    })
     .then((response)=>{
-
+        console.log(response)
     })
     .catch((err)=>{
-
+        console.log(err)
     })
 }
+
+function signOut(){
+    deleteToken()
+}
+
+
+
+function saveToken(token){
+    if(typeof(Storage)!== "undefined"){
+        localStorage.setItem("TOKEN",token)
+    }else{
+        throw new Error('El navegador no soporta localStorage')
+    }
+}
+
+function getToken(){
+    return localStorage.getItem("TOKEN")
+}
+
+function deleteToken(){
+    localStorage.removeItem("TOKEN")
+}
+
 
 
 
