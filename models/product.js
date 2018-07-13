@@ -14,4 +14,24 @@ const ProductSchema = Schema({
 
 const ProductModel = mongoose.model('Product', ProductSchema)
 
+
+// POPULATE
+function createData(){
+
+  ProductModel.create(
+    {name:'', picture:'', price:'', category:'', description:''}
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
 module.exports = ProductModel

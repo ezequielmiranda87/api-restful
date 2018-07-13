@@ -22,7 +22,7 @@ function isAuth (req, res, next) {
       next()
     })
     .catch((respose) => {
-      // res.status(response.status).send(response.message)
+      res.status(response.status).send(response.message)
       next()
     })
 
