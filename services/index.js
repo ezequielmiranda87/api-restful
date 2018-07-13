@@ -13,6 +13,8 @@ function createToken (user) {
   return jwt.encode(payload, config.SECRET_TOKEN)
 }
 
+// This fc recibe the token from the client, decode, an validate it
+// Token true, false o expire
 function decodeToken (token) {
   const decoded = new Promise((resolve, reject) => {
     try {
@@ -31,6 +33,7 @@ function decodeToken (token) {
       })
     }
   })
+  
   return decoded
 }
 

@@ -18,7 +18,7 @@ function isAuth (req, res, next) {
   // utilizamos el token para decodificarlo
   services.decodeToken(token)
     .then((response) => {
-      // req.user = response
+       req.user = response
       next()
     })
     .catch((respose) => {
@@ -26,7 +26,6 @@ function isAuth (req, res, next) {
       next()
     })
 
-  next()
 }
 
 module.exports = isAuth

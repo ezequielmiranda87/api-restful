@@ -3,6 +3,7 @@ Builindg API restful  with node.js 4.0
 
 
 # Getting started
+
 * Clone thus repo ```https://github.com/ezequielmiranda87/api-restful```
 * Install dependencies ```npm install```
 * Install MongoDb Community Edition  and run it by executing ```mongod```
@@ -40,10 +41,10 @@ root/
 │   ├── index.js
 ```
 
-#API RESTful 
+## API RESTful 
 Detail of the APIT RESTful resources
 
-## Product
+### Product
 
 * GET    ``` /product/ ```
 * GET    ``` /product/:id/ ```
@@ -51,10 +52,10 @@ Detail of the APIT RESTful resources
 * PUT    ``` /product/:id/ ```
 * DELETE ``` /product/:id/ ```
 
-## User
+### User
 * GET    ``` /user/ ```
 
-## Auth
+### Auth
 * POST    ``` /signup/ ```
 * POST    ``` /signin/ ```
 
