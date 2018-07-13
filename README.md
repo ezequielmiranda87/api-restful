@@ -40,5 +40,23 @@ root/
 │   ├── index.js
 ```
 
+#API RESTful 
+Detail of the APIT RESTful resources
+
+## Product
+
+* GET    ``` /product/ ```
+* GET    ``` /product/:id/ ```
+* POST   ``` /product/ ```
+* PUT    ``` /product/:id/ ```
+* DELETE ``` /product/:id/ ```
+
+## User
+* GET    ``` /user/ ```
+
+## Auth
+* POST    ``` /signup/ ```
+* POST    ``` /signin/ ```
+
 # Testing API
 Test your API using 
