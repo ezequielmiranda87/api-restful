@@ -18,6 +18,59 @@ function getUsers (req, res) {
     })
 }
 
+function getUser(req, res){
+  User.findById(req.params.id)
+  .then((user)=>{
+    res.status(200).send(user)
+  })
+  .catch((err)=>{
+    res.status(404).send({message:'El recurso no se encontro', err:err})
+  })
+}
+
+function saveUser(req, res){
+  const user = new User({
+    email: req.body.email,
+    displayName: req.body.displayName,
+    password: req.body.password
+  })
+  user.save()
+  .then((user)=>{
+    res.status(200).send({message:'El usuario se creo satisfactoriamente'})
+  })
+  .catch((err)=>{
+    res.status(500).send({message:'No se pudo crear el usuario', err:err})
+  })
+}
+
+function updateUser(req, res){
+  const userId = req.params.id
+  const userBody = req.body
+
+  User.findByIdAndUpdate(userId, userBody)
+  .then((userUpdated)=>{
+    res.status(200).send(userUpdated)
+  })
+  .catch((err)=>{
+    res.status(500).send({message:'No se pudo Modificar el usuario', err:err})
+  })
+}
+
+function deleteUser(req, res){
+  const userId = req.params.id
+  User.findById(userId)
+  .then((user)=>{
+    user.remove()
+    .then((user)=>{
+      res.status(200).send({message: 'El usuario se ha eliminado'})
+    })
+  })
+  .catch((err)=>{
+    res.status(500).send({message:'No se pudo eliminar el usuario', err:err})
+  })
+}
+
+
 // Controller user - metodo para registro de usuario
 // la funcion sigUp, es un midleware que se llama por medio de HTTP POST a la ruta localhost/api/signUp
 function singUp (req, res) {
@@ -52,5 +105,9 @@ function singIn (req, res) {
 module.exports = {
   singUp,
   singIn,
-  getUsers
+  getUser,
+  getUsers,
+  saveUser,
+  updateUser,
+  deleteUser
 }

@@ -2,6 +2,34 @@
 
 const services = require('../services')
 
+function isCustomer(req, res, next){
+
+  next()
+}
+
+function isSeller(req, res, next){
+
+  next()
+}
+
+function isManager(){
+
+  next()
+}
+
+function isAdminstrator(req, res, next){
+  const isAdmin = false
+  if(isAdmin){
+    console.log("is Adminstrator")
+    next()
+  }else{
+    console.log("is not Adminstrator")
+    res.status(403).send({message:'No tienes permiso para acceder'})
+  }
+  
+}
+
+
 function isAuth (req, res, next) {
   // Valida la existencia del token en el heeader
   // Format: Authorization: Bearer tokentokenttokentoken
@@ -28,4 +56,39 @@ function isAuth (req, res, next) {
 
 }
 
-module.exports = isAuth
+function init(type){
+console.log('Inside de switch')
+  switch (type) {
+    case 'administrator':
+      return isAdminstrator
+    break;
+    case 'manager':
+      return isManager
+    break;
+    case 'seller':
+      return isSeller
+    break;
+    case 'customer':
+      return isCustomer
+    break;
+    case 'auth':
+      return isAuth
+    break;
+    default:
+    throw 'No existe el tipo'
+      break;
+  }
+
+
+}
+
+module.exports = init;
+/*
+module.exports = {
+  isAdminstrator,
+  isAuth,
+  isCustomer,
+  isManager,
+  isSeller,
+}
+*/
