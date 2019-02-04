@@ -1,6 +1,6 @@
-# API - RESTful
-Builindg API restful  with node.js 4.0 
+# API - RESTful NodeJS + MongoDB + JWT(JSON Web Token)
 
+Simple API for authentication, registratation and user Managment
 
 # Getting started
 
